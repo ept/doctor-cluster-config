@@ -1,5 +1,21 @@
 {
   "nodes": {
+    "core-contracts": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1646335944,
+        "narHash": "sha256-qH1OltR5FiDH3V8hGYUTYAO8Qe/HSVDCWeLE9vasNi4=",
+        "owner": "near",
+        "repo": "core-contracts",
+        "rev": "793e0594bab4e9cf730d37cd2a493a173b0e2ed3",
+        "type": "github"
+      },
+      "original": {
+        "owner": "near",
+        "repo": "core-contracts",
+        "type": "github"
+      }
+    },
     "deploykit": {
       "inputs": {
         "flake-parts": [
@@ -26,6 +42,27 @@
     "flake-parts": {
       "inputs": {
         "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1661009076,
+        "narHash": "sha256-phAE40gctVygRq3G3B6LhvD7u2qdQT21xsz8DdRDYFo=",
+        "owner": "hercules-ci",
+        "repo": "flake-parts",
+        "rev": "850d8a76026127ef02f040fb0dcfdb8b749dd9d9",
+        "type": "github"
+      },
+      "original": {
+        "owner": "hercules-ci",
+        "repo": "flake-parts",
+        "type": "github"
+      }
+    },
+    "flake-parts_2": {
+      "inputs": {
+        "nixpkgs": [
+          "kuutamod",
           "nixpkgs"
         ]
       },
@@ -80,6 +117,26 @@
         "type": "github"
       }
     },
+    "kuutamod": {
+      "inputs": {
+        "core-contracts": "core-contracts",
+        "flake-parts": "flake-parts_2",
+        "nixpkgs": "nixpkgs"
+      },
+      "locked": {
+        "lastModified": 1661917995,
+        "narHash": "sha256-EYiv9YShVZmZ0D1f54EwrnquMzrUJC8ZgIV9tZvImsg=",
+        "owner": "kuutamolabs",
+        "repo": "kuutamod",
+        "rev": "09548b96133f132abce052c4c998f73205a446e9",
+        "type": "github"
+      },
+      "original": {
+        "owner": "kuutamolabs",
+        "repo": "kuutamod",
+        "type": "github"
+      }
+    },
     "nix-ld": {
       "inputs": {
         "nixpkgs": [
@@ -118,16 +175,16 @@
     },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1661656705,
-        "narHash": "sha256-1ujNuL1Tx1dt8dC/kuYS329ZZgiXXmD96axwrqsUY7w=",
+        "lastModified": 1661803638,
+        "narHash": "sha256-dLv8n0qPfXa54HMS2eaJbvFWD1+Bo3IqSE5F3PhXFd4=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "290dbaacc1f0b783fd8e271b585ec2c8c3b03954",
+        "rev": "9f908318684fd0968a68a31495c0807c0be3f403",
         "type": "github"
       },
       "original": {
         "owner": "NixOS",
-        "ref": "release-22.05",
+        "ref": "nixos-unstable-small",
         "repo": "nixpkgs",
         "type": "github"
       }
@@ -160,6 +217,22 @@
       "original": {
         "owner": "Mic92",
         "ref": "main",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
+    "nixpkgs_2": {
+      "locked": {
+        "lastModified": 1661656705,
+        "narHash": "sha256-1ujNuL1Tx1dt8dC/kuYS329ZZgiXXmD96axwrqsUY7w=",
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "290dbaacc1f0b783fd8e271b585ec2c8c3b03954",
+        "type": "github"
+      },
+      "original": {
+        "owner": "NixOS",
+        "ref": "release-22.05",
         "repo": "nixpkgs",
         "type": "github"
       }
@@ -200,9 +273,10 @@
         "flake-parts": "flake-parts",
         "flake-registry": "flake-registry",
         "home-manager": "home-manager",
+        "kuutamod": "kuutamod",
         "nix-ld": "nix-ld",
         "nixos-hardware": "nixos-hardware",
-        "nixpkgs": "nixpkgs",
+        "nixpkgs": "nixpkgs_2",
         "nixpkgs-unstable": "nixpkgs-unstable",
         "nur": "nur",
         "retiolum": "retiolum",

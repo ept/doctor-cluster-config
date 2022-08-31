@@ -39,6 +39,9 @@
     deploykit.url = "github:numtide/deploykit";
     deploykit.inputs.nixpkgs.follows = "nixpkgs";
     deploykit.inputs.flake-parts.follows = "flake-parts";
+
+    # This is the line you need to add.
+    kuutamod.url = "github:kuutamolabs/kuutamod";
   };
 
   outputs = {

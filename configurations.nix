@@ -159,6 +159,18 @@ in {
       modules =
         computeNodeModules
         ++ [
+          #({ config, ... }: {
+          #  sops.secrets.validator-key.owner = "neard";
+          #  sops.secrets.node-key.owner = "neard";
+          #  kuutamo.kuutamod.validatorKeyFile = config.sops.secrets.validator-key.path;
+          #  kuutamo.kuutamod.validatorNodeKeyFile = config.sops.secrets.node-key.path;
+          #  kuutamo.neard.s3.dataBackupDirectory = "s3://kuutamo-shardnet-backup/data";
+
+          #  services.consul.interface.bind = "enp81s0f0";
+          #})
+          #self.inputs.kuutamod.nixosModules.kuutamo-binary-cache
+          #self.inputs.kuutamod.nixosModules.kuutamod
+          #self.inputs.kuutamod.nixosModules.neard-shardnet
           ./hosts/christina.nix
         ];
     };
